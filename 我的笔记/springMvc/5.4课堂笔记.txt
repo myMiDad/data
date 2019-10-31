@@ -1,0 +1,41 @@
+###今天估计就把SpringMVC讲完了   
+
+##回顾
+*前端控制器可以不用指定扫描组建和视图控制器的位置 有默认的位置和命名   但不建议这样做
+*运行流程  必须自己能用自己的话说出来  
+4.6 前三个 要记住
+
+昨天主要学得就是请求
+
+##响应
+
+
+
+5#model and view 源码解读  
+debug  从下往上执行  每一行都是一个调用栈
+视图 事物解析器   关键的那行代码   结论：springMVC会把ModelAndView中的模型数据存放到request域对象中
+
+6#5.3 处理模型数据之 Map
+结论：SpringMVC会把Map中的模型数据存放到request域对象中
+	SpringMVC再调用玩请求处理方法后，不管方法的返回值是什么类型，都会处理成一个ModelAndView对象
+BindingAwareModelMap即实现了model接口 也实现了map接口
+
+7#处理模型数据之 Model
+
+8#视图解析概述
+
+9#视图和视图解析器的关系     三个接口 View ViewResolver  ？
+
+10#JSTLview 继承了 InternalResourceView   ，结论：导入了jar包 视图解析器会自动修改为JstlView
+
+11#6.6 视图解析器
+
+什么是视图  什么是视图解析器  方法有那些？
+
+12#6.8	mvc:view-controller标签
+
+13#重定向      redirect：
+
+14#-#25  小项目
+
+

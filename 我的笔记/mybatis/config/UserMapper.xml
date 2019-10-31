@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tom.mapper.UserMapper">
+    <!--public List<UserMapper> findAllUser();-->
+    <select id="findAllUser" resultType="com.tom.entity.UserEntity">
+        select * from user
+    </select>
+
+    <!--int addUser(UserEntity user);-->
+    <insert id="addUser" parameterType="com.tom.entity.UserEntity">
+        insert into user values (#{id},#{username},#{password})
+    </insert>
+
+    <!--List<UserEntity> findUserLike();-->
+    <select id="findUserLike" resultType="com.tom.entity.UserEntity">
+        /*select * from user where username like '%${username}%'*/
+        select * from user where username like #{username}
+    </select>
+</mapper>

@@ -1,0 +1,131 @@
+###MyBatis
+1#
+持久层   和数据库进行交互的  也就是dao层
+
+Hibernant不需要写sql语句，但是对于大型项目来说 想要优化 涉及到底层  所以用MyBatis
+
+只需要写-------DAO接口+sql语句  
+其是一个半自动ORM（Object Relation Mapping对象关系映射）框架   Hibernant是全自动的
+
+2#
+
+JDBC 和 Hibernant 的缺点   
+  *引发了我的一个想法   全自动的不见的就是最好的  半自动 不见的就是不好的   人工智能  能区分 哪些任务需要帮你解决  哪些不需要
+
+3# 
+下载  介绍
+
+
+4# hello world 
+
+导包  +  配置文件
+
+5#  
+
+数据库表+javabean
+
+6#
+SqlSessionFactory +SqlSession对象
+
+7#  查询一个对象
+
+8#小结helloworld
+
+	两个重要的配置文件
+		mybatis-condig.xml:全局配置文件， 数据库连接信息 ，引入sql映射文件。。。。
+		EmployeeMapper.xml sql映射文件 配置增删改查的sql语句的映射  
+	两个重要的对象
+		sqlSessionFactory  sqlSession工厂 用来生成sqlSession对象
+		sqlSession 数据库的会话对象（java程序与数据库的会话对象，可以理解为对Connection的封装）
+
+9#mapper接口开发 
+
+sqlsession  对象 有各种方法  可以把sql注入到DAO中   但是这个方法不好  （自己补充 为啥不好）
+
+用mapper接口去做   其实就是DAO接口
+
+Mapper接口与SQL映射文件的绑定   EmlpoyeeeDAO  - employeeMapper    映射文件的namespace必须指定接口的全类名  
+Mapper接口的方法 与 sql映射文件的具体sql语句的绑定   sql语句的id值  必须指定成接口的方法名
+
+
+#mapper接口开发的好处
+1.session对象  没有明确的类型约束      编译不会报错  运行会报错    用mapper接口，不用涉及session的底层 ，在mapper中类型已经明确    
+2.抽象 >1.多态   2.解耦 
+
+ 
+###下午
+11#全局配置文件   概述  
+
+properties 属性
+settings 设置
+typeAliases 类型别名  
+environments 环境
+mappers 映射器
+
+12#配置 eclise中xml文件的dtd 解决小问题  
+小问题   写配置文件的时候没有提示信息 
+dtd  xsd  
+
+13#全局配置文件-propertis属性的配置
+
+14#全局配置文件 - setting
+
+15#
+
+*包和子包下有相同的类，这个时候批量取别名 会报错     解决办法  用Alias（）注解 指定别名
+
+从操作和可读性上来说 还是全类名比较好   ，两者都可以用
+
+16# 配置环境（environments）
+DTD文件中的声明  有+ * 无  ：  0-n  1-n   只能出现1次    14：56
+
+事务管理器的 jdbc也是一个别名   具体在源码中能找到？ 还是在pdf中   （其实可以自己写事务管理器的）
+
+
+17#mappers
+批量引入的时候 会遇到一个问题   巧妙的解决办法在不同的源码包中创建两个相同的包    
+
+另外spring 整合mybatis的时候 就有不再一起的解决办法了  
+
+
+
+
+19#  配置文件中的标签 其实是有顺序要求的   
+
+
+20# 第4章  映射文件简介   
+ 
+21#  crud
+
+
+
+******配置- 接口里面写方法-映射文件里面写sql语句
+
+
+在mybitis中做增删改的时候一定要提交   调opensession方法
+
+
+
+22# （4.3不好  再看 ） 如何获取到数据库返回的修改条数信息  
+接口中的方法 返回值改一下；在测试类中增加一条语句？？？
+
+23#  插入   
+需求：
+
+下去试一试 获取刚插入数据的信息  
+
+24-27#  4.4
+
+24# 4.4参数传递 
+
+普通类型 （基本类型+包装类型+String）
+
+
+明天会把第四章的剩下部分讲完 然后上午结束mybatis  下午讲框架整合
+
+
+
+###	晚上自习
+
+1.为啥我在做helloworld的时候就没有出现下划线显示不出来的情况？
+

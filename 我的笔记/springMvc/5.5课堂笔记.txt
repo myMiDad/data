@@ -1,0 +1,43 @@
+###
+
+#回顾
+昨天从第五章开讲的
+
+项目中的新内容  -表单标签    -静态资源请求  （把代码中相关的知识总结出来）
+每个功能的思路 >具体实现     2-3遍
+
+2#第八章 JSON
+3# MessageConverter原理
+
+4#扩展    MessageConverter 可以实现下载的功能
+
+	@ResponseBody 必须写  利用ResponseEntity 实现下载
+
+#处理JSON 也需要anotationDriven来支持
+
+#文件上传
+
+#拦截器
+
+
+
+14：23  有视图解析器的快捷输入  看看老师如何缩写的
+14：29  怎么算给add加上映射了？两个配置的作用      解决  
+	配置handler了    原来映射 也不能走通  必须加上driven  为啥？
+
+
+11.2    作业   工作流程 自己整理一遍
+
+
+debug调试  重点关注加断点的地方
+
+指定的是SpringMVC   spring 取补集
+
+
+如何获取IOC对象   
+通过key   通过一个工具类    这两个方法 都通过servletcontext
+
+
+
+#复习JDBC   mybatis 讲一天半，然后讲SSM整合（估计半天）
+#
